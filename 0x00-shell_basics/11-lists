@@ -1,9 +1,4 @@
 #!/bin/bash
-echo "current directory:"
 ls -la
-sleep 1
-echo "parent directory:"
 ls -la ../
-sleep 1 
-echo "the boot directory:"
 ls -la /boot/
