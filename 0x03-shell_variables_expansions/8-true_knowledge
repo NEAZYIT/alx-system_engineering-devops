@@ -1,0 +1,4 @@
+#!/bin/bash
+echo  "give me  a number "
+read TRUEKNOWLEDGE
+echo $(($TRUEKNOWLEDGE + 128)) 
