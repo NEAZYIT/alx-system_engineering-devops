@@ -1,3 +1,2 @@
 #!/bin/bash	
 echo "The sum of WATER and STIR is $(echo "$((${WATER} + ${STIR}))") in base bestchol." | tr -d '\n'
-
