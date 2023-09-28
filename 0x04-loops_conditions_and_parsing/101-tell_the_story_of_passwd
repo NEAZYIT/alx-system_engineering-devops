@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 # This script displays information about users from the /etc/passwd file.
 # It uses the while loop and IFS to extract and format the data.
 
