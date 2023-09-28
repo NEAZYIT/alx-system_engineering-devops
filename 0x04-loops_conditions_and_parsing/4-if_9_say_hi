@@ -1,13 +1,23 @@
 #!/usr/bin/env bash
 # This script displays "Best School" 10 times, with "Hi" on the 9th iteration.
 
-counter=0
-while [ $counter -lt 10 ]
+# Initialize a counter
+counter=1
+
+# Set the maximum number of iterations
+max_iterations=10
+
+# Start a while loop
+while [ $counter -le $max_iterations ]
 do
-	if [ $counter -eq 8 ]; then
-		echo "Hi"
-	else
-		echo "Best School"
-	fi
-	counter=$((counter+1))
+    # Check if it's the 9th iteration
+    if [ $counter -eq 9 ]; then
+        echo "Best School"
+        echo "Hi"
+    else
+        echo "Best School"
+    fi
+
+    # Increment the counter
+    counter=$((counter+1))
 done
