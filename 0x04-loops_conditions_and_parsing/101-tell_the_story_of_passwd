@@ -1,12 +1,6 @@
-#!/usr/bin/env bash
-# This script displays information about users from the /etc/passwd file.
-# It uses the while loop and IFS to extract and format the data.
+#!/bin/bash
+# This script displays the content of the file /etc/passwd, using the while loop + IFS.
 
-# Set the Internal Field Separator (IFS) to ":" to split lines into fields.
-IFS=":"
-
-# Open the /etc/passwd file for reading.
-while read -r USERNAME PASSWORD USER_ID GROUP_ID USER_ID_INFO HOME_DIRECTORY COMMAND_SHELL
-do
-	echo "The user $USERNAME is part of the GROUP_ID gang, lives in $HOME_DIRECTORY and rides $COMMAND/SHELL. $USER ID's place is protected by the passcode $PASSWORD, more info about the user here: $USER ID INFO"
+while read -r username password user_id group_id home_directory shell; do
+  echo "The user $username is part of the $group_id gang, lives in $home_directory and rides $command."
 done < /etc/passwd
