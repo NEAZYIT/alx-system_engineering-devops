@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# This script displays messages based on the loop iteration number.
+
+# Initialize the counter for loop iteration
+counter=1
+
+# Define the maximum number of iterations
+max_iterations=10
+
+# Start a loop that runs as long as the counter is less than or equal to the maximum iterations
+while [ $counter -le $max_iterations ]
+do
+    # Check if the current iteration is 4 and display "bad luck" if true
+    if [ $counter -eq 4 ]; then
+        echo "bad luck"
+    # Check if the current iteration is 8 and display "good luck" if true
+    elif [ $counter -eq 8 ]; then
+        echo "good luck"
+    # For all other iterations, display "Best School"
+    else
+        echo "Best School"
+    fi
+
+    # Increment the counter to move to the next iteration
+    counter=$((counter+1))
+done
