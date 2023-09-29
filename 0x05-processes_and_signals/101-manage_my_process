@@ -1,0 +1,18 @@
+#!/bin/bash
+# This script manages another script called 'manage_my_process' using start, stop, and restart commands.
+
+case "$1" in
+    start)
+        ./manage_my_process start
+        ;;
+    stop)
+        ./manage_my_process stop
+        ;;
+    restart)
+        ./manage_my_process restart
+        ;;
+    *)
+        echo "Usage: $0 {start|stop|restart}"
+        exit 1
+        ;;
+esac
