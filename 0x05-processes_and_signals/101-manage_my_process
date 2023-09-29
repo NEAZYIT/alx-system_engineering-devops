@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # This script manages another script called 'manage_my_process' using start, stop, and restart commands.
 
 case "$1" in

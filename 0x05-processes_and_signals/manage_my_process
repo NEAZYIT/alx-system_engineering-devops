@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # This script manages a background process that writes "I am alive!" to /tmp/my_process.
 
 case "$1" in
