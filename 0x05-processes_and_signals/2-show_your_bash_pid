@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Script to display Bash PID
+
+# Disable SC2009 warning for shellcheck
+# shellcheck disable=SC2009
+
+# Use ps command to list processes containing "bash" and grep to filter
+ps aux | grep "bash"
