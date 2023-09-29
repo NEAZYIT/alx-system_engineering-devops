@@ -2,7 +2,7 @@
 # Continuously writes "I am alive!" to /tmp/my_process with a 2-second pause.
 
 while true; do
-  # Write "I am alive!" to /tmp/my_process and sleep for 2 seconds.
-  echo "I am alive!" >> /tmp/my_process
-  sleep 2
+	# Write "I am alive!" to /tmp/my_process and sleep for 2 seconds.
+	echo "I am alive!" >> /tmp/my_process
+	sleep 2
 done
