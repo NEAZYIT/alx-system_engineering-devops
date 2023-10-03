@@ -9,15 +9,8 @@ end
 # Extract the argument from the command line
 text = ARGV[0]
 
-# Define the regular expression to match "School"
-regex = /School/
+# Use a regular expression to find all occurrences of "School" and join them with '$'
+matches = text.scan(/School/).join('$')
 
-# Find all matches in the text
-matches = text.scan(regex)
-
-# Check if any matches were found
-if !matches.empty?
-  puts matches.join('$') + '$'
-else
-  puts "No match found"
-end
+# Print the result
+puts matches
