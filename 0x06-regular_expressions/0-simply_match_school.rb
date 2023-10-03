@@ -9,14 +9,15 @@ end
 # Extract the argument from the command line
 text = ARGV[0]
 
-
 # Define the regular expression to match "School"
 regex = /School/
 
+# Find all matches in the text
+matches = text.scan(regex)
 
-# Check if the text matches the regular expression
-if text =~ regex
-  puts text
+# Check if any matches were found
+if !matches.empty?
+  puts matches.join('$') + '$'
 else
   puts "No match found"
 end
