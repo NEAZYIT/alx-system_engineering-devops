@@ -1,16 +1,2 @@
 #!/usr/bin/env ruby
-
-# Check if there's an argument passed to the script
-if ARGV.empty?
-  puts "Usage: #{$PROGRAM_NAME} <text>"
-  exit(1)
-end
-
-# Extract the argument from the command line
-text = ARGV[0]
-
-# Use a regular expression to find all occurrences of "School" and join them with '$'
-matches = text.scan(/School/).join('$')
-
-# Print the result
-puts matches
+puts ARGV[0].scan(/School/).join
