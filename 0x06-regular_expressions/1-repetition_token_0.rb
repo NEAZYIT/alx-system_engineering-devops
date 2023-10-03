@@ -9,12 +9,8 @@ end
 # Extract the argument from the command line
 text = ARGV[0]
 
-# Define the regular expression to match specific patterns
-regex = /hbt{2,5}n/
+# Use a regular expression to find all occurrences of 'hbttn' and join them
+matches = text.scan(/hbt{2,5}n/).join
 
-# Check if the text matches the regular expression
-if text =~ regex
-  puts text
-else
-  puts "No match found"
-end
+# Print the result
+puts matches
