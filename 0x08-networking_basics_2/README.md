@@ -25,6 +25,6 @@ Write a Bash script that displays all active IPv4 IPs on the machine it’s exec
 - The script should list the active IPv4 IPs on the machine, which may include the local and external IPs.
 
 ---
-* GitHub Repository *
+* GitHub Repository
 
 GitHub Repository: [alx-system_engineering-devops](https://github.com/NEAZYIT/alx-system_engineering-devops)
