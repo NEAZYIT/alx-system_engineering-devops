@@ -3,13 +3,13 @@
 
 # Check if an argument (IP address) is provided
 if [ $# -eq 0 ]; then
-    echo "Usage: $0 {IP_ADDRESS}"
+    echo "Usage: 5-is_the_host_on_the_network {IP_ADDRESS}"
     exit 1
 fi
 
 # Extract the IP address from the argument
 ip_address="$1"
 
-# Ping the IP address 5 times with quiet output
+# Ping the IP address 5 times and display the results
 echo "Pinging $ip_address 5 times..."
-ping -c 5 -q -W 1 "$ip_address"
+ping -c 5 "$ip_address" | sed 's/---.*//'
