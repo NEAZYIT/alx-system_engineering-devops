@@ -1,8 +1,8 @@
-# 0x09. Web infrastructure design
+# 0x09. Web infrastructure design 🌟
 
-## Requirements
+## Requirements 📋
 
-### General
+### General 📌
 
 - A README.md file, at the root of the folder of the project, is mandatory
 - For each task, once you are done whiteboarding (on a whiteboard, piece of paper or software or your choice), take a picture/screenshot of your diagram
@@ -18,15 +18,15 @@
     - Similarly in a job interview, you should answer what the interviewer asked for, be careful about being too verbose - always ask the interviewer if going into details is necessary - speaking too much can play against you
     - In this project, again, avoid going in details if not asked
 
-## Tasks
+## Tasks 📝
 
-### 0. Simple web stack
+### 0. Simple web stack 🌐
 
 A lot of websites are powered by simple web infrastructure, a lot of time it is composed of a single server with a LAMP stack.
 
 On a whiteboard, design a one server web infrastructure that hosts the website that is reachable via www.foobar.com. Start your explanation by having a user wanting to access your website.
 
-#### Requirements:
+#### Requirements: 📋
 
 You must use:
 - 1 server
@@ -52,11 +52,11 @@ You must be able to explain what the issues are with this infrastructure:
 
 Please, remember that everything must be written in English to further your technical ability in a variety of settings.
  
-### 1. Distributed web infrastructure
+### 1. Distributed web infrastructure 🌍
 
 On a whiteboard, design a three server web infrastructure that hosts the website www.foobar.com.
 
-#### Requirements:
+#### Requirements: 📋
 
 You must add:
 - 2 servers
@@ -80,11 +80,11 @@ You must be able to explain what the issues are with this infrastructure:
 
 Please, remember that everything must be written in English to further your technical ability in a variety of settings.
 
-### 2. Secured and monitored web infrastructure
+### 2. Secured and monitored web infrastructure 🔒👁️
 
 On a whiteboard, design a three server web infrastructure that hosts the website www.foobar.com, it must be secured, serve encrypted traffic, and be monitored.
 
-#### Requirements:
+#### Requirements: 📋
 
 You must add:
 - 3 firewalls
@@ -105,7 +105,7 @@ You must be able to explain what the issues are with this infrastructure:
 
 Please, remember that everything must be written in English to further your technical ability in a variety of settings.
 
-### 3. Scale up
+### 3. Scale up 🚀
 
 You must add to your infrastructure:
 
@@ -130,7 +130,7 @@ You must be able to explain what the issues are with this infrastructure:
 
 Please, remember that everything must be written in English to further your technical ability in a variety of settings.
 
-### AUTOR
+### AUTHOR 👤
 
 **NEAZYIT**
 [NEAZYIT](https://github.com/NEAZYIT)
