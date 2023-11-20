@@ -31,4 +31,4 @@ This task involves employing a dictionary attack to exploit password-based authe
   - `1-dictionary_attack`: Instructions for performing a dictionary attack
 
 ## Author
-- [Your Name](https://github.com/NEAZYIT)
+- [NEAZYIT](https://github.com/NEAZYIT)
