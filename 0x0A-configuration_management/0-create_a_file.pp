@@ -1,5 +1,6 @@
+# Ensures the creation of a file 'school' in the /tmp directory
 file { '/tmp/school':
-  ensure  => file,
+  ensure  => 'file',
   mode    => '0744',
   owner   => 'www-data',
   group   => 'www-data',
