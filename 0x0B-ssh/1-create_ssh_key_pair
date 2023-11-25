@@ -1,10 +1,3 @@
 #!/usr/bin/env bash
 # This script creates an RSA key pair
-
-# Uses echo to provide the passphrase 'betty' twice and pipes it to ssh-keygen command
-# -e flag interprets backslash escapes (allowing the newline to be entered)
-# -t rsa specifies the type of key to create as RSA
-# -b 4096 specifies the number of bits in the key (4096 in this case)
-# -f school specifies the filename and path for the private key to be generated
-# -N betty sets the passphrase for the private key to 'betty'
 echo -e "betty\nbetty" | ssh-keygen -t rsa -b 4096 -f ~/.ssh/school -N betty
