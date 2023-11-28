@@ -1,29 +1,10 @@
 #!/usr/bin/env bash
-# This script installs nginx, creates a custom index page, sets up a redirection, and restarts the service
-
-# Update the package lists for upgrades and new package installations
+# Configure your Nginx server so that /redirect_me is redirecting
+# to another page.
 sudo apt-get update -y
+sudo apt-get install -y nginx
 
-# Install nginx
-sudo apt-get install nginx -y
+echo "Hello World!" > /var/www/html/index.nginx-debian.html
+sudo sed -i "/listen 80 default_server;/a rewrite ^/redirect_me https://github.com/NEAZYIT permanent;" /etc/nginx/sites-enabled/default
 
-# Remove the default nginx index page
-sudo rm /var/www/html/index.nginx-debian.html
-
-# Create a new index.html file
-echo "Hello World!" | sudo tee /var/www/html/index.html
-
-# Set up a redirection from /redirect_me to another page
-echo "server {
-    listen 80;
-    server_name _;
-    location /redirect_me {
-        return 301 https://www.youtube.com/watch?v=f0oy-NicIgE&t=406s;
-    }
-    location / {
-        root /var/www/html;
-    }
-}" | sudo tee /etc/nginx/sites-available/default
-
-# Restart nginx
 sudo service nginx restart
