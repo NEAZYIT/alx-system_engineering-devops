@@ -10,7 +10,7 @@ sudo apt install nginx -y
 
 echo "Hello World!" | sudo tee /var/www/html/index.html
 
-tring_for_replacement="server_name _;\n\trewrite ^\/redirect_me https:\/\/github.com\/NEAZYIT permanent;"
+string_for_replacement="server_name _;\n\trewrite ^\/redirect_me https:\/\/github.com\/NEAZYIT permanent;"
 sudo sed -i "s/server_name _;/$string_for_replacement/" /etc/nginx/sites-enabled/default
 
 echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
