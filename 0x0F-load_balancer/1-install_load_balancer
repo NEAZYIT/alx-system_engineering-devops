@@ -1,20 +1,12 @@
 #!/usr/bin/env bash
 # Script to install and configure HAProxy
 
-# Update the system
-if ! sudo apt update; then
-    echo "Failed to update the system. Exiting."
-    exit 1
-fi
+# Install HAProxy
+sudo apt update
+sudo apt install -y haproxy
 
-# Install HAproxy
-if ! sudo apt install -y haproxy; then
-    echo "Failed to install HAproxy. Exiting."
-    exit 1
-fi
-
-# Configure HAproxy
-if ! sudo tee /etc/haproxy/haproxy.cfg >/dev/null <<EOF
+# Configure HAProxy
+cat <<EOF | sudo tee /etc/haproxy/haproxy.cfg >/dev/null
 global
     log /dev/log    local0
     log /dev/log    local1 notice
@@ -40,16 +32,9 @@ frontend main
 
 backend webservers
     balance roundrobin
-    server web-01 100.26.243.102:80 check
-    server web-02 54.237.96.116:80 check
+    server web-01 373243-web-01:80 check
+    server web-02 373243-web-02:80 check
 EOF
-then
-    echo "Failed to configure HAproxy. Exiting."
-    exit 1
-fi
 
 # Restart HAProxy service
-if ! sudo service haproxy restart; then
-    echo "Failed to restart HAproxy. Exiting."
-    exit 1
-fi
+sudo service haproxy restart
