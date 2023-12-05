@@ -2,21 +2,19 @@
 # Script to install and configure HAProxy
 
 # Update the system
-sudo apt update
-if [ $? -ne 0 ]; then
+if ! sudo apt update; then
     echo "Failed to update the system. Exiting."
     exit 1
 fi
 
 # Install HAproxy
-sudo apt install -y haproxy
-if [ $? -ne 0 ]; then
+if ! sudo apt install -y haproxy; then
     echo "Failed to install HAproxy. Exiting."
     exit 1
 fi
 
 # Configure HAproxy
-cat <<EOF | sudo tee /etc/haproxy/haproxy.cfg >/dev/null
+if ! sudo tee /etc/haproxy/haproxy.cfg >/dev/null <<EOF
 global
     log /dev/log    local0
     log /dev/log    local1 notice
@@ -45,14 +43,13 @@ backend webservers
     server web-01 100.26.243.102:80 check
     server web-02 54.237.96.116:80 check
 EOF
-if [ $? -ne 0 ]; then
+then
     echo "Failed to configure HAproxy. Exiting."
     exit 1
 fi
 
 # Restart HAProxy service
-sudo service haproxy restart
-if [ $? -ne 0 ]; then
+if ! sudo service haproxy restart; then
     echo "Failed to restart HAproxy. Exiting."
     exit 1
 fi
