@@ -1,0 +1,58 @@
+#!/usr/bin/env bash
+# Script to install and configure HAProxy
+
+# Update the system
+sudo apt update
+if [ $? -ne 0 ]; then
+    echo "Failed to update the system. Exiting."
+    exit 1
+fi
+
+# Install HAproxy
+sudo apt install -y haproxy
+if [ $? -ne 0 ]; then
+    echo "Failed to install HAproxy. Exiting."
+    exit 1
+fi
+
+# Configure HAproxy
+cat <<EOF | sudo tee /etc/haproxy/haproxy.cfg >/dev/null
+global
+    log /dev/log    local0
+    log /dev/log    local1 notice
+    chroot /var/lib/haproxy
+    stats socket /run/haproxy/admin.sock mode 660 level admin
+    stats timeout 30s
+    user haproxy
+    group haproxy
+    daemon
+
+defaults
+    log     global
+    mode    http
+    option  httplog
+    option  dontlognull
+    timeout connect 5000
+    timeout client  50000
+    timeout server  50000
+
+frontend main
+    bind *:80
+    default_backend webservers
+
+backend webservers
+    balance roundrobin
+    server web-01 100.26.243.102:80 check
+    server web-02 54.237.96.116:80 check
+EOF
+if [ $? -ne 0 ]; then
+    echo "Failed to configure HAproxy. Exiting."
+    exit 1
+fi
+
+# Restart HAProxy service
+sudo service haproxy restart
+if [ $? -ne 0 ]; then
+    echo "Failed to restart HAproxy. Exiting."
+    exit 1
+fi
