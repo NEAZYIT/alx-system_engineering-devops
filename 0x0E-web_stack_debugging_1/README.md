@@ -1,5 +1,7 @@
 # 0x0E. Web stack debugging #1
 
+![ 0x0E  Web stack debugging](https://github.com/NEAZYIT/alx-system_engineering-devops/assets/121446147/d2ba7e60-d7f6-424e-9d37-c7711d4c219e)
+
 ## Description
 This project focuses on debugging and fixing issues related to Nginx configuration and service availability on Ubuntu 20.04 LTS.
 
@@ -23,7 +25,7 @@ This project focuses on debugging and fixing issues related to Nginx configurati
 - Verify using `curl 0:80`
 
 Repo:
-GitHub repository: [alx-system_engineering-devops](link_here)
+GitHub repository: [alx-system_engineering-devops](https://github.com/NEAZYIT/alx-system_engineering-devops/edit/master/0x0E-web_stack_debugging_1/0-nginx_likes_port_80)
 Directory: 0x0E-web_stack_debugging_1
 File: 0-nginx_likes_port_80
 
@@ -35,7 +37,7 @@ File: 0-nginx_likes_port_80
 - Check service status with `service nginx status`
 
 Repo:
-GitHub repository: [alx-system_engineering-devops](link_here)
+GitHub repository: [alx-system_engineering-devops](https://github.com/NEAZYIT/alx-system_engineering-devops/edit/master/0x0E-web_stack_debugging_1/1-debugging_made_short)
 Directory: 0x0E-web_stack_debugging_1
 File: 1-debugging_made_short
 
