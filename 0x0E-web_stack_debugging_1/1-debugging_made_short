@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Comment explaining the script's purpose
+# Adjusts Nginx port from 8080 to 80
+
+sudo sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default
+sudo service nginx restart
+sudo kill -9 "$(sudo cat /var/run/nginx.pid)"
