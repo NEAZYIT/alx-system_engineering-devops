@@ -1,12 +1,7 @@
 #!/usr/bin/env bash
-# Comment explaining the script's purpose
-# Script to ensure Nginx listens on port 80 of all active IPv4 IPs
+# Adjusts Nginx port from 8080 to 80
+# Replace occurrences of port 8080 with port 80 in Nginx configuration
+sudo sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default
 
-# Backup Nginx default config
-cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default_backup
-
-# Modify Nginx config to listen on port 80
-sed -i '/listen 80 default_server;/ c\    listen 80 default_server;' /etc/nginx/sites-available/default
-
-# Restart Nginx to apply changes
-service nginx restart
+# Restart Nginx service to apply the configuration changes
+sudo service nginx restart
