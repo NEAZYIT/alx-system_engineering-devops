@@ -1,5 +1,7 @@
 # 0x10. HTTPS SSL
 
+![ssl](https://github.com/NEAZYIT/alx-system_engineering-devops/assets/121446147/ad1c3686-609b-493a-8bcd-6e495ef37a71)
+
 ## Description
 This project focuses on configuring various servers and settings related to web infrastructure. It involves tasks such as setting up domain zones, configuring HAproxy for SSL termination, and enforcing HTTPS traffic.
 
