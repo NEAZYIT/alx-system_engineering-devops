@@ -11,7 +11,7 @@ This repository contains explanations, diagrams, and contributions related to un
 [Diagram: Visual Representation of the Request Flow](https://www.linkedin.com/posts/nazih-touih-ab229425b_once-upon-a-digital-journey-when-you-tapped-activity-7142202280165928960-jOuh?utm_source=combined_share_message&utm_medium=member_desktop)
 
 ### Task 2: Contributing to a Comprehensive Answer
-[Contribution: Pull Request to the "What Happens When" Repository](URL_of_pull_request)
+[Contribution: Pull Request to the "What Happens When" Repository](https://github.com/alex/what-happens-when/pull/1574)
 
 ## Repository Structure
 
