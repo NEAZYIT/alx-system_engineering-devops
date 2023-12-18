@@ -2,6 +2,8 @@
 
 This project covers the debugging and configurations related to web stack management.
 
+![Web stack debugging](https://github.com/NEAZYIT/alx-system_engineering-devops/assets/121446147/6cce46ef-7461-4c4b-ae9f-0a749aa3dd91)
+
 ## Requirements
 
 ### General
@@ -42,9 +44,9 @@ This project covers the debugging and configurations related to web stack manage
 
 ### Files for Each Task
 
-- Task 0: [0-iamsomeoneelse](link_to_file)
-- Task 1: [1-run_nginx_as_nginx](link_to_file)
-- Task 2: [100-fix_in_7_lines_or_less](link_to_file)
+- Task 0: [0-iamsomeoneelse](https://github.com/NEAZYIT/alx-system_engineering-devops/blob/master/0x12-web_stack_debugging_2/0-iamsomeoneelse)
+- Task 1: [1-run_nginx_as_nginx](https://github.com/NEAZYIT/alx-system_engineering-devops/blob/master/0x12-web_stack_debugging_2/1-run_nginx_as_nginx)
+- Task 2: [100-fix_in_7_lines_or_less](https://github.com/NEAZYIT/alx-system_engineering-devops/blob/master/0x12-web_stack_debugging_2/100-fix_in_7_lines_or_less)
 
 ## Usage
 
