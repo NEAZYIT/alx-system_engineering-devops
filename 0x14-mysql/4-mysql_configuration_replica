@@ -1,0 +1,17 @@
+[mysqld]
+pid-file        = /var/run/mysqld/mysqld.pid
+socket          = /var/run/mysqld/mysqld.sock
+datadir         = /var/lib/mysql
+log-error       = /var/log/mysql/error.log
+# Log bin configuration to enable binary logging
+log_bin         = /var/log/mysql/mysql-bin.log
+# Specific server ID for the replica server
+server-id       = 2
+# Specify the relay log file name and location
+relay_log       = /var/log/mysql/mysql-relay-bin.log
+# Specify databases to include in binary log (not recommended)
+binlog-do-db = tyrell_corp
+# By default we only accept connections from localhost
+bind-address    = 127.0.0.1
+# Disabling symbolic-links is recommended to prevent assorted security risks
+symbolic-links=0
