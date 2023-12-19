@@ -1,5 +1,7 @@
 # MySQL Server Configuration and Replication Setup
 
+![PixQL](https://github.com/NEAZYIT/alx-system_engineering-devops/assets/121446147/e48ff8ab-809c-4226-87a1-1481a6e88d65)
+
 ## Project Overview
 This project aims to configure MySQL servers, set up replication between them, and perform backups using Bash scripts. Below are the tasks completed:
 
@@ -29,4 +31,4 @@ This project aims to configure MySQL servers, set up replication between them, a
 Ensure all Bash scripts are executable and pass Shellcheck.
 
 ## Author
-[NEAZYIT]()
+[NEAZYIT](https://github.com/NEAZYIT)
