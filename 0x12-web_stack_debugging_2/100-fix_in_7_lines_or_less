@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
-# Replace /etc/nginx/nginx.conf user directive
-sed -i "s/^user root;/user nginx;/" /etc/nginx/nginx.conf
-
-# Set nginx user and group for process
-runuser -l nginx -c "nginx -g 'daemon'; kill $(pgrep -f '^nginx')"
-
-# Verify process owner
-ps auxff | grep nginx | grep -v grep
+# Adjusts Nginx configuration for user and port, then starts the service
+sudo sed -i -e 's/#user www-data/user nginx/' -e 's/80/8080/g' /etc/nginx/nginx.conf /etc/nginx/sites-available/default
+sudo chmod 644 /etc/nginx/nginx.conf
+sudo pkill apache2
+sudo -u nginx service nginx start
