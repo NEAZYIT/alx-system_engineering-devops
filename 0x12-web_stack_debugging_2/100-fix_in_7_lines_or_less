@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
+# Replace /etc/nginx/nginx.conf user directive
+sed -i "s/^user root;/user nginx;/" /etc/nginx/nginx.conf
 
-# Change default port from 80 to 8080 in nginx configuration
-sudo sed -i 's/80/8080/' /etc/nginx/sites-available/default
-sudo service nginx restart
+# Set nginx user and group for process
+runuser -l nginx -c "nginx -g 'daemon'; kill $(pgrep -f '^nginx')"
+
+# Verify process owner
+ps auxff | grep nginx | grep -v grep
