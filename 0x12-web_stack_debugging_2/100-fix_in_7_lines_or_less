@@ -1,15 +1,5 @@
 #!/usr/bin/env bash
-# Configure Nginx to run as the nginx user and adjust settings
 
-# Stop Apache2 if it's running
-pkill apache2
-
-# Set ownership and permissions for nginx.conf to nginx user
-chown nginx:nginx /etc/nginx/nginx.conf
-chmod 644 /etc/nginx/nginx.conf
-
-# Modify default site configuration to use port 8080 instead of 80
-sed -i 's/80/8080/g' /etc/nginx/sites-available/default
-
-# Start Nginx service running as the nginx user
-sudo -u nginx service nginx start
+# Change default port from 80 to 8080 in nginx configuration
+sudo sed -i 's/80/8080/' /etc/nginx/sites-available/default
+sudo service nginx restart
