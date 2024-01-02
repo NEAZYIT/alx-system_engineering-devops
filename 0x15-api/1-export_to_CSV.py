@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """
 A script to export an employee's TODO list to a CSV file.
 
