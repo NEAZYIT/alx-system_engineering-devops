@@ -27,9 +27,6 @@ This project involves interacting with a REST API to gather and manipulate data 
 | **2. Export to JSON** | Extend Task #0 to export data in JSON format. |
 | **3. Dictionary of list of dictionaries** | Extend Task #0 to export all tasks from all employees in a specific JSON format. |
 
-## Repository Information
-- **GitHub repository:** alx-system_engineering-devops
-- **Directory:** 0x15-api
 
 ## Files
 - **0-gather_data_from_an_API.py**
