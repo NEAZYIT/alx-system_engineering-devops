@@ -1,65 +1,39 @@
 #!/usr/bin/python3
 """
-Retrieve and display TODO list progress for a given employee ID from a
-REST API.
-
-Usage: python3 0-gather_data_from_an_API.py employee_id
-
-Arguments:
-employee_id: Integer representing the employee ID
-
-Example:
-python3 0-gather_data_from_an_API.py 2
+Retrieves and displays TODO list progress for a given employee ID using a REST API.
 """
 
 import requests
 import sys
 
+def get_employee_progress(employee_id):
+    # URL for employee's TODO list
+    todo_url = f'https://jsonplaceholder.typicode.com/users/{employee_id}/todos'
+    # URL for employee's information
+    employee_url = f'https://jsonplaceholder.typicode.com/users/{employee_id}'
 
-def display_todo_progress(employee_id):
-    """
-    Fetches and displays the TODO list progress for the specified employee.
+    # Fetch data using requests
+    with requests.Session() as session_req:
+        employee = session_req.get(todo_url)
+        employee_name = session_req.get(employee_url)
 
-    Args:
-    employee_id (int): ID of the employee to retrieve TODO progress
+        json_req = employee.json()
+        name = employee_name.json()['name']
 
-    Returns:
-    None
-    """
-    user_response = requests.get(
-        f"https://jsonplaceholder.typicode.com/users/{employee_id}"
-    )
-    todos_response = requests.get(
-        f"https://jsonplaceholder.typicode.com/todos?userId={employee_id}"
-    )
+        total_tasks = len(json_req)
+        completed_tasks = sum(1 for task in json_req if task['completed'])
 
-    if (
-        user_response.status_code != 200
-        or todos_response.status_code != 200
-    ):
-        print("Error: Employee data not found.")
-        sys.exit(1)
+        print(f"Employee {name} is done with tasks ({completed_tasks}/{total_tasks}):")
 
-    employee_data = user_response.json()
-    todos_data = todos_response.json()
-
-    total_tasks = len(todos_data)
-    completed_tasks = [
-        task["title"] for task in todos_data if task["completed"]
-    ]
-
-    print(
-        f"Employee {employee_data['name']} is done with tasks "
-        f"({len(completed_tasks)}/{total_tasks}):"
-    )
-    for task in completed_tasks:
-        print(f"\t{task}")
-
+        # Display completed tasks
+        for task in json_req:
+            if task['completed']:
+                print(f"\t {task.get('title')}")
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2 or not sys.argv[1].isdigit():
-        print("Usage: python3 0-gather_data_from_an_API.py employee_id")
+    if len(sys.argv) != 2:
+        print("Usage: python3 script_name.py employee_id")
         sys.exit(1)
 
-    employee_id = int(sys.argv[1])
-    display_todo_progress(employee_id)
+    employee_id = sys.argv[1]
+    get_employee_progress(employee_id)
