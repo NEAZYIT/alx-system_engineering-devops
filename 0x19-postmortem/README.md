@@ -1,6 +1,6 @@
 # Postmortem: The Grand Meltdown - alx-system_engineering-devops
 
-![CHAOS](https://github.com/NEAZYIT/alx-system_engineering-devops/assets/121446147/114a235c-12cb-404d-8318-15246dbe58d2){:width="800px"}
+![CHAOS](https://github.com/NEAZYIT/alx-system_engineering-devops/raw/main/assets/114a235c-12cb-404d-8318-15246dbe58d2){:width="800px"}
 
 ## A Symphony of Chaos and Redemption
 
