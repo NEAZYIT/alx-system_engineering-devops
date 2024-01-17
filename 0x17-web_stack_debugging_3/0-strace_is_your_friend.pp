@@ -1,20 +1,6 @@
-# 0-strace_is_your_friend.pp
+# Correcting the Apache 500 error by replacing 'phpp' with 'php' in wp-settings.php
 
-# Ensure Apache service is running
-service { 'apache2':
-  ensure => 'running',
-}
-
-# Your custom fix using a Puppet resource type (example: file)
-file { '/path/to/your/fix/file':
-  ensure  => 'present',
-  content => 'your_fix_content',
-  # Add any other required attributes for your specific fix
-}
-
-# Notify Apache to restart whenever the fix is applied
-exec { 'restart_apache':
-  command     => '/bin/systemctl restart apache2',
-  refreshonly => true,
-  subscribe   => File['/path/to/your/fix/file'],
+exec { 'correct_apache_error':
+  provider => 'shell',
+  command  => 'sed -i "s/phpp/php/g" /var/www/html/wp-settings.php'
 }
