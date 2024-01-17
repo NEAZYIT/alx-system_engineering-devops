@@ -29,8 +29,9 @@ def number_of_subscribers(subreddit):
         response.raise_for_status()
 
         data = response.json()
-        print("OK")
-        return data["data"]["subscribers"]
+        subscribers = data["data"]["subscribers"]
+        print(subscribers)
+        return subscribers
 
     except requests.exceptions.RequestException as e:
         print(f"Error fetching subreddit information: {e}")
