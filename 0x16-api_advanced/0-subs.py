@@ -29,6 +29,7 @@ def number_of_subscribers(subreddit):
         response.raise_for_status()
 
         data = response.json()
+        print("OK")
         return data["data"]["subscribers"]
 
     except requests.exceptions.RequestException as e:
