@@ -20,7 +20,7 @@ def number_of_subscribers(subreddit):
 
     url = f"https://www.reddit.com/r/{subreddit}/about.json"
     headers = {
-            "User-Agent": "YourAppName/0.1",
+            "User-Agent": "MyScript/1.0",
             "Accept": "application/json"
             }
 
