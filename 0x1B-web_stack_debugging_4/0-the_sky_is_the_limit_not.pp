@@ -1,18 +1,5 @@
-# Ensure the 'nginx' package is installed
-package { 'nginx':
-  ensure => installed,
+# Fix Nginx limits
+exec { 'Limit':
+  command => '/usr/bin/env sed -i s/15/2000/ /etc/default/nginx',
 }
-
-# Manage the Nginx limits
-file_line { 'nginx_limits':
-  path  => '/etc/default/nginx',
-  line  => 'LIMIT=2000',
-  match => '^LIMIT=',
-}
-
-# Manage the Nginx service
-service { 'nginx':
-  ensure     => running,
-  enable     => true,
-  subscribe  => File_line['nginx_limits'],
-}
+exec { '/usr/bin/env service nginx restart': }
