@@ -1,5 +1,7 @@
 # 0x1A. Application Server
 
+![app ser](https://github.com/NEAZYIT/alx-system_engineering-devops/assets/121446147/8026d7f1-6dca-4001-bafc-a1d782bd79a6)
+
 ## Description
 
 This project focuses on setting up and deploying various web applications using Python, Flask, Gunicorn, and Nginx. The tasks involve configuring development and production environments, serving dynamic content, handling routing, and setting up an API server.
